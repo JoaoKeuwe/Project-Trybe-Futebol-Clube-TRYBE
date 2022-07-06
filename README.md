@@ -69,7 +69,7 @@ O projeto é composto de 4 entidades importantes para sua estrutura:
   <summary><strong> 🗓 Data de Entrega</strong></summary><br />
 
   * Projeto individual;
-  * Serão `X` dias de projeto;
+  * Serão `7` dias de projeto;
   * Data de entrega para avaliação final do projeto: `XX/XX/XXXX 14:00`.
 
 </details>
@@ -83,9 +83,9 @@ Leia essa parte atentamente, pois aqui você encontrará informações important
 <summary><strong> 🔰 Iniciando o projeto</strong></summary><br />
 
   1. Clone o repositório
-	* `git clone https://github.com/tryber/sd-0x-trybe-futebol-clube.git`.
+	* `git clone https://github.com/tryber/sd-017-trybe-futebol-clube.git`.
 - Entre na pasta do repositório que você acabou de clonar:
-	* `cd sd-0x-trybe-futebol-clube`
+	* `cd sd-017-trybe-futebol-clube`
 
   2. Instale as dependências [**Caso existam**]
 	*`npm install`
@@ -98,7 +98,7 @@ Leia essa parte atentamente, pois aqui você encontrará informações important
 - Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
 	
 - Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-	* Exemplo: `git checkout -b maria-sd-0x-trybe-futebol-clube`
+	* Exemplo: `git checkout -b maria-sd-017-trybe-futebol-clube`
 
   4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
 - Verifique que as mudanças ainda não estão no _stage_
@@ -113,7 +113,7 @@ Leia essa parte atentamente, pois aqui você encontrará informações important
           * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
   5. Adicione a sua branch com o novo `commit` ao repositório remoto
-- Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-trybe-futebol-clube`
+- Usando o exemplo anterior: `git push -u origin joaozinho-sd-017-trybe-futebol-clube`
 
   6. Crie um novo `Pull Request` _(PR)_
 - Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-[nome-do-projeto]/pulls)
@@ -132,7 +132,7 @@ Para garantir a qualidade do código, usaremos o [ESLint](https://eslint.org/) p
 
 Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json` nos seguintes caminhos:
 
-- `sd-0x-trybe-futebol-clube/app/backend/package.json`
+- `sd-017-trybe-futebol-clube/app/backend/package.json`
 
 Para rodar o `ESLint` em um projeto, basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
 
@@ -445,7 +445,7 @@ Aqui você encontra orientações opcionais para seguir após o desenvolvimento 
   - Vá até a página DO SEU Pull Request, adicione a label de "code-review" e marque seus colegas
     - No menu à direita, clique no *link* "Labels" e escolha a label code-review
     - No menu à direita, clique no *link* "Assignees" e escolha o seu usuário
-    - No menu à direita, clique no *link* "Reviewers" e digite students, selecione o time tryber/students-sd-0x
+    - No menu à direita, clique no *link* "Reviewers" e digite students, selecione o time tryber/students-sd-017
 
  ➡️ Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
