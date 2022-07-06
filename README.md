@@ -70,7 +70,7 @@ O projeto é composto de 4 entidades importantes para sua estrutura:
 
   * Projeto individual;
   * Serão `7` dias de projeto;
-  * Data de entrega para avaliação final do projeto: `XX/XX/XXXX 14:00`.
+  * Data de entrega para avaliação final do projeto: `21/07/2022 14:00`.
 
 </details>
 
@@ -83,7 +83,7 @@ Leia essa parte atentamente, pois aqui você encontrará informações important
 <summary><strong> 🔰 Iniciando o projeto</strong></summary><br />
 
   1. Clone o repositório
-	* `git clone https://github.com/tryber/sd-017-trybe-futebol-clube.git`.
+	* `git clone git@github.com:tryber/sd-017-trybe-futebol-clube.git`.
 - Entre na pasta do repositório que você acabou de clonar:
 	* `cd sd-017-trybe-futebol-clube`
 
