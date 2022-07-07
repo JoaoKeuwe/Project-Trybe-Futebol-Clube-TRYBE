@@ -4,7 +4,6 @@ services:
     build: ./frontend
     ports:
       - 3000:3000
-    platform: linux/x86_64
     working_dir: /app-frontend
     depends_on:
       backend:
@@ -23,8 +22,7 @@ services:
     working_dir: /app-backend
     command: npm run dev
     volumes: 
-      - ./backend:/app-backend
-    platform: linux/x86_64
+      - ./backend/src:/app-backend/src
     depends_on:
       db:
         condition: service_healthy
