@@ -1,9 +1,15 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('trybe_eval', {
+    await queryInterface.createTable('user', {
       id: {
         primaryKey: true,
         type: Sequelize.INTEGER,
+      },
+      user: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
       }
     });
   },
