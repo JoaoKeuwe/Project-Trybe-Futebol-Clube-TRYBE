@@ -1,4 +1,4 @@
-import { Model, INTEGER, STRING } from 'sequelize';
+import { Model, INTEGER } from 'sequelize';
 import db from '.';
 
 class Matches extends Model {
@@ -14,23 +14,23 @@ Matches.init({
     autoIncrement: true,
   },
   homeTeam: {
-    type: STRING,
+    type: INTEGER,
     allowNull: false,
   },
   homeTeamGoals: {
-    type: STRING,
+    type: INTEGER,
     allowNull: false,
   },
   awayTeam: {
-    type: STRING,
+    type: INTEGER,
     allowNull: false,
   },
   awayTeamGoals: {
-    type: STRING,
+    type: INTEGER,
     allowNull: false,
   },
   inProgress: {
-    type: STRING,
+    type: INTEGER,
     allowNull: false,
   },
 }, {
