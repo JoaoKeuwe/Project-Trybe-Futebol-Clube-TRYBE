@@ -1,8 +1,3 @@
-import token from ./
-const emailRegex = /\S+@\S+.\S+/;
-const validEmail (req, res, next) {
-    const {email} = req.body
-    if (!emailRegex.test(email)) {
-        return token
-    }
-}
+import Joi from 'Joi'
+ const validEmail = Joi.string()
+    .email({ minDomainSegments: 2, tlds: { allow: ['com'] } })
