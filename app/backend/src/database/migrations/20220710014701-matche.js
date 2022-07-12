@@ -12,6 +12,7 @@ module.exports = {
       type: Sequelize.INTEGER,
       allowNull: false,
     },
+    
     home_team_goals: {
       type: Sequelize.INTEGER,
       allowNull: false,
