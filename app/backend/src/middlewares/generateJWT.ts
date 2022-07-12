@@ -6,13 +6,17 @@ interface IUser {
   username: string;
 
 }
-
 function generateJWT(payload: IUser) {
+  console.log(payload);
+
   const secret = process.env.JWT_SECRET || 'jwt_secret';
   const jwtConfig:object = {
     algorithm: 'HS256',
   };
-  return jwt.sign({ payload }, secret, jwtConfig);
+  const token = jwt.sign({ data: payload }, secret, jwtConfig);
+  console.log(token);
+
+  return token;
 }
 
 export default generateJWT;
