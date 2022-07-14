@@ -14,7 +14,7 @@ chai.use(chaiHttp);
 const { expect } = chai;
 
 describe('TDD 5%', () => {
-
+  
   let chaiHttpResponse: Response;
   let attributes = {
     id: 0,
@@ -38,22 +38,36 @@ describe('TDD 5%', () => {
     (User.findOne as sinon.SinonStub).restore();
     (jwt.sign as sinon.SinonStub).restore();
   })
-
+  
   it('testando se tem token valido, status 200', async () => {
     chaiHttpResponse = await chai
-       .request(app)
-       .post('/login')
-       .send({
-        "email": "admin@admin.com",
-        "password": "B393u10aED0RQ1N3PAEXQ7HxtLjKPEZBu.PW"
-      })
-      console.log(chaiHttpResponse);
-      
+    .request(app)
+    .post('/login')
+    .send({
+      "email": "admin@admin.com",
+      "password": "B393u10aED0RQ1N3PAEXQ7HxtLjKPEZBu.PW"
+    })
+    console.log(chaiHttpResponse)
+    
     expect(chaiHttpResponse.status).to.equal(200)
     expect(chaiHttpResponse.body.token).to.equal(tokenGenerate.token)
     expect(chaiHttpResponse.ok).to.equal(true)
     expect(chaiHttpResponse.info).to.equal(false)
+  });
+  it('testando se tem token valido, status 200', async () => {
+    chaiHttpResponse = await chai
+    .request(app)
+    .post('/login')
+    .send({
+      "email": "admin@xablau.com",
+      "password": "B393u10aED0RQ1N3PAEXQ7HxtLjKPEZBu.PW"
+    })
+    console.log(chaiHttpResponse.body)
     
+    expect(chaiHttpResponse.status).to.equal(401)
+    expect(chaiHttpResponse.body.message).to.equal('Incorrect email or password')
+    expect(chaiHttpResponse.ok).to.equal(false)
+    expect(chaiHttpResponse.info).to.equal(false)
   });
 
 });
