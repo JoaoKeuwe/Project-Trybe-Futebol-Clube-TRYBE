@@ -1,4 +1,3 @@
-import * as jwt from 'jsonwebtoken';
 import 'dotenv/config';
 import User from '../database/models/user';
 import generateToken from '../middlewares/generateJWT';
@@ -18,12 +17,15 @@ class UserService {
     }
   }
 
-  async role(token: string) {
-    const JWT: string = process.env.JWT_SECRET || 'jwt_secret';
-    const generateJWT = jwt.verify(token, JWT) as jwt.JwtPayload;
-    const { password } = generateJWT.payload;
-    const roles = await this.model.findOne(password);
-    return roles;
+  async role(id: number):Promise<string> {
+    const userData = await this.model.findOne({ where: { id } });
+    console.log(userData);
+
+    if (!userData) {
+      return (`User ${id} not found`);
+    }
+    const { role } = userData;
+    return role;
   }
 }
 export default UserService;

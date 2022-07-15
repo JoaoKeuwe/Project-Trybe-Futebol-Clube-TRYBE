@@ -5,18 +5,18 @@ import validationToken from '../middlewares/validToken';
 import UserController from '../controller/login.controller';
 
 const routeUser = Router();
+const userController = new UserController();
 routeUser.post(
-  '/login',
+  '/',
   sendedEmail,
   sendedPassword,
   emailValidation,
   validPassword,
-
-  new UserController().login,
+  userController.login,
 );
 routeUser.get(
-  '/login/validate',
+  '/validate',
   validationToken,
-  new UserController().loginValidate,
+  userController.loginValidate,
 );
 export default routeUser;
