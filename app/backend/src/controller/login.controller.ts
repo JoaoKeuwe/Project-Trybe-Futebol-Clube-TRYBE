@@ -1,19 +1,20 @@
 import { Request, Response, NextFunction } from 'express';
+import { IRequest } from '../interfaces/request.interface';
 import UserService from '../services/login.services';
 
 class UserController {
-  login = async (req:Request, res: Response) => {
+  public login = async (req:Request, res: Response) => {
     const { email } = req.body;
     const loginService = new UserService();
     const token = await loginService.login(email);
     return res.status(200).json({ token });
   };
 
-  loginValidate = async (req: Request, res: Response, next: NextFunction) => {
+  public loginValidate = async (req: IRequest, res: Response, next: NextFunction) => {
     try {
-      const { authorization } = req.headers;
+      const { username } = req.user;
       const service = new UserService();
-      const roles = service.role(authorization);
+      const roles = service.role(username);
       return res.status(200).json(roles);
     } catch (error) {
       next(error);

@@ -54,6 +54,7 @@ describe('TDD 5%', () => {
     expect(chaiHttpResponse.ok).to.equal(true)
     expect(chaiHttpResponse.info).to.equal(false)
   });
+  
   it('testando se tem token valido, status 200', async () => {
     chaiHttpResponse = await chai
     .request(app)
@@ -68,6 +69,12 @@ describe('TDD 5%', () => {
     expect(chaiHttpResponse.body.message).to.equal('Incorrect email or password')
     expect(chaiHttpResponse.ok).to.equal(false)
     expect(chaiHttpResponse.info).to.equal(false)
+    expect(chaiHttpResponse.statusType).to.equal(4)
+    expect(chaiHttpResponse.redirect).to.equal(false)
+    expect(chaiHttpResponse.type).to.equal('application/json')
+    expect(chaiHttpResponse.serverError).to.equal(false)
+    expect(chaiHttpResponse.notFound).to.equal(false)
   });
-
+  
+  
 });

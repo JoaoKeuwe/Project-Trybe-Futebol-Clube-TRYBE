@@ -1,7 +1,5 @@
 import * as express from 'express';
-import LoginController from './controller/login.controller';
-import { sendedEmail, emailValidation } from './middlewares/validEmail';
-import { sendedPassword, validPassword } from './middlewares/validPassword';
+import routes from './routes/index';
 
 class App {
   public app: express.Express;
@@ -13,16 +11,7 @@ class App {
 
     // Não remover essa rota
     this.app.get('/', (req, res) => res.json({ ok: true }));
-    // this.app.use(login)
-    this.app.post(
-      '/login',
-      sendedEmail,
-      sendedPassword,
-      emailValidation,
-      validPassword,
-
-      new LoginController().login,
-    );
+    this.app.use(routes);
   }
 
   private config():void {
