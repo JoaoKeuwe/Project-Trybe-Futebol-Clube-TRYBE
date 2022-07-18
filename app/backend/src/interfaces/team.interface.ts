@@ -4,4 +4,5 @@ export interface ITeams {
 }
 export interface ITeamModel {
   findTeam(): Promise<ITeams[] | null>;
+  findTeamId(id: string): Promise<ITeams | null>;
 }

@@ -13,9 +13,9 @@ class UserController {
   public findTeamId = async (req: Request, res: Response) => {
     const { id } = req.params;
     const teamServices = new TeamServices();
-    const teams = await teamServices.findTeam(id);
+    const teams = await teamServices.findTeamId(id);
     return res.status(200).json(teams);
-  }
+  };
 }
 
 export default UserController;

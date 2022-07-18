@@ -2,7 +2,7 @@ import { Model, INTEGER, STRING } from 'sequelize';
 import db from '.';
 
 class Teams extends Model {
-  static findTeam() {
+  static errorTeam() {
     throw new Error('Method not implemented.');
   }
 
@@ -23,6 +23,7 @@ Teams.init({
   },
 }, {
   sequelize: db,
+  underscored: true,
   modelName: 'teams',
   timestamps: false,
 });
