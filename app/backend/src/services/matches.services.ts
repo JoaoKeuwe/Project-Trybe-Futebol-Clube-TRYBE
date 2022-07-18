@@ -1,8 +1,8 @@
 import Model from '../database/models/matches';
-import { IMatches, IMatchModel } from '../interfaces/matches.interface';
+import { IMatches } from '../interfaces/matches.interface';
 import modelTeams from '../database/models/team';
 
-class MacthesServices implements IMatchModel {
+class MacthesServices {
   constructor(private model = Model) {
     this.model = model;
   }
@@ -24,39 +24,40 @@ class MacthesServices implements IMatchModel {
     }
     return matches as unknown as IMatches[];
   };
-
-  createMatch = async (matches: IMatches): Promise<IMatches> => {
-    const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = matches;
-
-    const match = await this.model.create({
-      awayTeam,
-      awayTeamGoals,
-      homeTeam,
-      inProgress: true,
-      homeTeamGoals,
-    });
-
-    return match;
-  };
-
-  pathUpdate = async (id: string) => {
-    const match = await this.model.update({ inProgress: false }, { where: { id } });
-
-    return match;
-  };
-
-  updateScore = async (
-    id: string,
-    awayTeamGoals: number,
-    homeTeamGoals: number,
-  ) => {
-    const updateScore = await this.model.update({
-      awayTeamGoals,
-      homeTeamGoals,
-      id }, { where: { id } });
-
-    return updateScore;
-  };
 }
+
+//   createMatch = async (matches: IMatches): Promise<IMatches> => {
+//     const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = matches;
+
+//     const match = await this.model.create({
+//       awayTeam,
+//       awayTeamGoals,
+//       homeTeam,
+//       inProgress: true,
+//       homeTeamGoals,
+//     });
+
+//     return match;
+//   };
+
+//   pathUpdate = async (id: string) => {
+//     const match = await this.model.update({ inProgress: false }, { where: { id } });
+
+//     return match;
+//   };
+
+//   updateScore = async (
+//     id: string,
+//     awayTeamGoals: number,
+//     homeTeamGoals: number,
+//   ) => {
+//     const updateScore = await this.model.update({
+//       awayTeamGoals,
+//       homeTeamGoals,
+//       id }, { where: { id } });
+
+//     return updateScore;
+//   };
+// }
 
 export default MacthesServices;

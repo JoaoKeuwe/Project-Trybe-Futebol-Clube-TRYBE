@@ -15,25 +15,25 @@ class MatchesController {
     return res.status(200).json(matches);
   }
 
-  async matchesCreate(req: Request, res: Response) {
-    const matches = await this.service.createMatch(req.body);
-    return res.status(201).json(matches);
-  }
+  // async matchesCreate(req: Request, res: Response) {
+  //   const matches = await this.service.createMatch(req.body);
+  //   return res.status(201).json(matches);
+  // }
 
-  async patchUpdate(req: Request, res: Response) {
-    const { id } = req.params;
-    await this.service.pathUpdate(id);
+  // async patchUpdate(req: Request, res: Response) {
+  //   const { id } = req.params;
+  //   await this.service.pathUpdate(id);
 
-    return res.status(200).json({ message: 'FIM' });
-  }
+  //   return res.status(200).json({ message: 'FIM' });
+  // }
 
-  async updateScore(req: Request, res: Response) {
-    const { id } = req.params;
-    const { homeTeamGoals, awayTeamGoals } = req.body;
-    await this.service.updateScore(homeTeamGoals, awayTeamGoals, Number(id));
+  // async updateScore(req: Request, res: Response) {
+  //   const { id } = req.params;
+  //   const { homeTeamGoals, awayTeamGoals } = req.body;
+  //   await this.service.updateScore(homeTeamGoals, awayTeamGoals, Number(id));
 
-    return res.status(200).json({ message: 'atualizado com sucesso!' });
-  }
+  //   return res.status(200).json({ message: 'atualizado com sucesso!' });
+  // }
 }
 
 export default MatchesController;
