@@ -13,6 +13,10 @@ class TeamServices {
 
     return teams;
   }
-}
 
+  async findTeamId(id: string) {
+    const team = await this.model.findTeam(id);
+    return team;
+  }
+}
 export default TeamServices;

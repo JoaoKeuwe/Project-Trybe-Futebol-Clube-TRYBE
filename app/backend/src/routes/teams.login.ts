@@ -9,5 +9,10 @@ teamsRoutes.get(
     userController.teams
   ),
 );
+teamsRoutes.get(
+  '/teams:id', (
+    userController.teams
+  ),
+);
 
 export default teamsRoutes;

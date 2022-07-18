@@ -6,8 +6,8 @@ class Teams extends Model {
     throw new Error('Method not implemented.');
   }
 
-  id: number;
-  teamName: string;
+  public id!: number;
+  public teamName: string;
 }
 
 Teams.init({

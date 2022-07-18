@@ -9,6 +9,13 @@ class UserController {
     const teams = await teamServices.findTeam();
     return res.status(200).json(teams);
   };
+
+  public findTeamId = async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const teamServices = new TeamServices();
+    const teams = await teamServices.findTeam(id);
+    return res.status(200).json(teams);
+  }
 }
 
 export default UserController;
