@@ -4,10 +4,8 @@ import UserController from '../controller/teams.controller';
 const teamsRoutes = Router();
 const userController = new UserController();
 
-teamsRoutes.get(
-  '/teams', (
-    userController.teams
-  ),
-);
+teamsRoutes.get('/', (req, res) => {
+  userController.teams(req, res);
+});
 
 export default teamsRoutes;
