@@ -15,7 +15,7 @@ const validationToken = async (req: IRequest, res: Response, next: NextFunction)
     req.user = data;
     next();
   } catch (err) {
-    next(Error('Expired or invalid token'));
+    return res.status(401).json({ message: 'Token must be a valid token' });
   }
 };
 export default validationToken;
