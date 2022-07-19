@@ -15,5 +15,8 @@ teamsRoutes.post('/', validationToken, validTeam, (req, res) => {
 teamsRoutes.patch('/:id/finish', (req, res) => {
   userController.patchUpdate(req, res);
 });
+teamsRoutes.patch('/:id', (req, res) => {
+  userController.updateScore(req, res);
+});
 
 export default teamsRoutes;

@@ -27,13 +27,13 @@ class MatchesController {
     return res.status(200).json({ message: 'Finished' });
   }
 
-  // async updateScore(req: Request, res: Response) {
-  //   const { id } = req.params;
-  //   const { homeTeamGoals, awayTeamGoals } = req.body;
-  //   await this.service.updateScore(homeTeamGoals, awayTeamGoals, Number(id));
+  async updateScore(req: Request, res: Response) {
+    const { id } = req.params;
+    const { homeTeamGoals, awayTeamGoals } = req.body;
+    await this.service.updateScore(homeTeamGoals, awayTeamGoals, Number(id));
 
-  //   return res.status(200).json({ message: 'atualizado com sucesso!' });
-  // }
+    return res.status(200).json({ message: 'atualizado com sucesso!' });
+  }
 }
 
 export default MatchesController;
