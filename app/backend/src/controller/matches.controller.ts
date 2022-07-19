@@ -32,7 +32,7 @@ class MatchesController {
     const { homeTeamGoals, awayTeamGoals } = req.body;
     await this.service.updateScore(homeTeamGoals, awayTeamGoals, Number(id));
 
-    return res.status(200).json({ message: 'atualizado com sucesso!' });
+    return res.status(200).json({ message: 'atualizado!' });
   }
 }
 
