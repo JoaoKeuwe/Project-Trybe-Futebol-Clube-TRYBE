@@ -22,9 +22,9 @@ class MatchesController {
 
   async patchUpdate(req: Request, res: Response) {
     const { id } = req.params;
-    const match = await this.service.pathUpdate(id);
+    await this.service.pathUpdate(id);
 
-    return res.status(200).json({ match });
+    return res.status(200).json({ message: 'Finished' });
   }
 
   // async updateScore(req: Request, res: Response) {

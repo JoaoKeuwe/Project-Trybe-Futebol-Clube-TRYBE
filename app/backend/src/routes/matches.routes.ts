@@ -11,7 +11,7 @@ teamsRoutes.get('/', (req, res) => {
 teamsRoutes.post('/', validationToken, (req, res) => {
   userController.matchesCreate(req, res);
 });
-teamsRoutes.patch('/:id/finished', (req, res) => {
+teamsRoutes.patch('/:id/finish', (req, res) => {
   userController.patchUpdate(req, res);
 });
 
