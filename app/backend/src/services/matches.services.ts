@@ -24,27 +24,27 @@ class MacthesServices {
     }
     return matches as unknown as IMatches[];
   };
+
+  createMatch = async (matches: IMatches): Promise<IMatches> => {
+    const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = matches;
+
+    const match = await this.model.create({
+      awayTeam,
+      awayTeamGoals,
+      homeTeam,
+      inProgress: true,
+      homeTeamGoals,
+    });
+
+    return match as unknown as IMatches;
+  };
+
+  pathUpdate = async (id: string) => {
+    const match = await this.model.update({ inProgress: false }, { where: { id } });
+
+    return match;
+  };
 }
-
-//   createMatch = async (matches: IMatches): Promise<IMatches> => {
-//     const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = matches;
-
-//     const match = await this.model.create({
-//       awayTeam,
-//       awayTeamGoals,
-//       homeTeam,
-//       inProgress: true,
-//       homeTeamGoals,
-//     });
-
-//     return match;
-//   };
-
-//   pathUpdate = async (id: string) => {
-//     const match = await this.model.update({ inProgress: false }, { where: { id } });
-
-//     return match;
-//   };
 
 //   updateScore = async (
 //     id: string,
