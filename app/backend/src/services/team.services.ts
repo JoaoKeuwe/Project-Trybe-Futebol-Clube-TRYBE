@@ -22,9 +22,10 @@ class TeamServices implements ITeamModel {
   }
 
   findTeamsId = async (homeTeam: number, awayTeam: number) => {
-    const teamsById = await this.model.findAll({ where: { id: [homeTeam, awayTeam] } });
-
-    return teamsById;
+    const idAwayTeam = await this.model.findOne({ where: { id: awayTeam } });
+    const idHomeTeam = await this.model.findOne({ where: { id: homeTeam } });
+    if (!idAwayTeam && !idHomeTeam) return [idAwayTeam, idHomeTeam];
+    return [];
   };
 }
 export default TeamServices;

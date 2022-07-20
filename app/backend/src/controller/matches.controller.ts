@@ -30,9 +30,9 @@ class MatchesController {
   async updateScore(req: Request, res: Response) {
     const { id } = req.params;
     const { homeTeamGoals, awayTeamGoals } = req.body;
-    await this.service.updateScore(homeTeamGoals, awayTeamGoals, Number(id));
+    await this.service.updateScore(homeTeamGoals, awayTeamGoals, id); // transofrmando o id em number
 
-    return res.status(200).json({ message: 'atualizadoo!' });
+    return res.status(200).json({ message: 'Finished' });
   }
 }
 

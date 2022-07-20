@@ -45,10 +45,11 @@ class MacthesServices {
     return match;
   };
 
-  updateScore = async (id: number, awayTeamGoals: number, homeTeamGoals: number) => {
-    const updateScore = await this.model.update({ awayTeamGoals,
+  updateScore = async (homeTeamGoals: number, awayTeamGoals: number, id: string) => {
+    const updateScore = await this.model.update({
+      awayTeamGoals,
       homeTeamGoals,
-      id }, { where: { id } });
+    }, { where: { id } });
 
     return updateScore;
   };
