@@ -3,6 +3,7 @@ export interface ITeams {
   teamName: string;
 }
 export interface ITeamModel {
+  findAll(): Promise<ITeams[] | null>;
   findTeam(): Promise<ITeams[] | null>;
   findTeamId(id: string): Promise<ITeams | null>;
 }

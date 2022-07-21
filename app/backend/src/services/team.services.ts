@@ -1,9 +1,8 @@
 import 'dotenv/config';
-import { ITeamModel } from '../interfaces/team.interface';
 import Teams from '../database/models/team';
 // import generateToken from '../middlewares/generateJWT';
 
-class TeamServices implements ITeamModel {
+class TeamServices {
   public model = Teams;
   constructor(model = Teams) {
     this.model = model;
